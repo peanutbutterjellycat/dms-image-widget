@@ -1,3 +1,4 @@
+
 import QtQuick
 import qs.Common
 import qs.Modules.Plugins
@@ -8,10 +9,27 @@ DesktopPluginComponent {
     minWidth: 64
     minHeight: 64
 
-    property string imagePath: pluginData.imagePath || "/home/scav/Downloads/hhh.gif"
+    property string imagePath: pluginData.imagePath || ""
+
+    Rectangle {
+        anchors.fill: parent
+        visible: root.imagePath === ""
+        color: Theme.surfaceVariant
+        radius: 8
+
+        Text {
+            anchors.centerIn: parent
+            width: parent.width - 20
+            text: "Choose an image in widget settings"
+            color: Theme.surfaceVariantText
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+        }
+    }
 
     AnimatedImage {
         anchors.fill: parent
+        visible: root.imagePath !== ""
         source: root.imagePath.startsWith("file://")
                 ? root.imagePath
                 : "file://" + root.imagePath
