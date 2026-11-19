@@ -1,0 +1,15 @@
+{
+    "id": "dankImageWidget",
+    "name": "Image Widget",
+    "description": "Display an image on your desktop",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": "Local",
+    "icon": "image",
+    "type": "desktop",
+    "capabilities": ["desktop-widget"],
+    "component": "./ImageWidget.qml",
+    "settings": "./ImageSettings.qml",
+    "requires_dms": ">=2.0.0",
+    "permissions": ["settings_read", "settings_write"]
+}
