@@ -18,7 +18,7 @@ PluginSettings {
         settingKey: "imagePath"
         label: "Image file path"
         description: "Absolute path to the image you want to display"
-        placeholder: "/home/scav/Downloads/zzz.png"
-        defaultValue: "/home/scav/Downloads/zzz.png"
+       placeholder: "/home/username/Pictures/image.gif"
+defaultValue: ""
     }
 }
