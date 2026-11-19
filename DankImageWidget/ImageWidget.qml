@@ -32,9 +32,11 @@ DesktopPluginComponent {
     AnimatedImage {
         anchors.fill: parent
         visible: root.imagePath !== ""
-        source: root.imagePath.startsWith("file://")
-                ? root.imagePath
-                : "file://" + root.imagePath
+        source: root.imagePath === ""
+        ? ""
+        : root.imagePath.startsWith("file://")
+            ? root.imagePath
+            : "file://" + root.imagePath
         fillMode: Image.PreserveAspectFit
         asynchronous: true
         cache: false
