@@ -2,6 +2,7 @@
 import QtQuick
 import qs.Common
 import qs.Modules.Plugins
+import qs.DCommon.Widgets
 
 DesktopPluginComponent {
     id: root
@@ -15,15 +16,16 @@ DesktopPluginComponent {
         anchors.fill: parent
         visible: root.imagePath === ""
         color: Theme.surfaceVariant
-        radius: 8
+        radius: Theme.cornerRadius
 
-        Text {
+        StyledText {
             anchors.centerIn: parent
-            width: parent.width - 20
+            width: parent.width - Theme.spacingM * 2
             text: "Choose an image in widget settings"
             color: Theme.surfaceVariantText
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: Theme.fontSizeMedium
         }
     }
 
@@ -41,3 +43,4 @@ DesktopPluginComponent {
         speed: 1.0
     }
 }
+
